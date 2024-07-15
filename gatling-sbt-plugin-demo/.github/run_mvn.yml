@@ -1,0 +1,17 @@
+# This is a basic workflow that is manually triggered
+
+name: Run Mvn tests
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v4
+    - run: java --version
+    # - run: sbt --version
+    - name: Run mvn api
+      run: mvn clean test -Dsuite=api
