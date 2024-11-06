@@ -25,7 +25,10 @@ jobs:
     - name: Setup Maven
       uses: stCarolas/setup-maven@v5
     - uses: actions/checkout@v4
-    - run: java --version
+    - name: check java
+      run: |
+        wget -O .datadog/dd-java-agent.jar https://dtdg.co/latest-java-tracer
+        java --version
     # - run: sbt --version
     - name: Run mvn api
       run: mvn clean test -Dsuite=api
