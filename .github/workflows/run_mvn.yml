@@ -34,6 +34,7 @@ jobs:
       run: |
         DD_CIVISIBILITY_ENABLED=true \
         DD_CIVISIBILITY_AGENTLESS_ENABLED=true \
+        DD_AGENTLESS_LOG_SUBMISSION_ENABLED=true \
         DD_API_KEY=${{ secrets.DD_API_KEY }} \
         DD_ENV=ci \
         DD_SERVICE=my-java-app \
