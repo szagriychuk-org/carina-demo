@@ -18,6 +18,12 @@ jobs:
         service: my-service
         api_key: ${{ secrets.DD_API_KEY }}
         site: datadoghq.com
+    - uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+    - name: Setup Maven
+      uses: stCarolas/setup-maven@v5
     - uses: actions/checkout@v4
     - run: java --version
     # - run: sbt --version
