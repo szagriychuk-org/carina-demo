@@ -29,7 +29,6 @@ jobs:
       run: |
         wget -O .datadog/dd-java-agent.jar https://dtdg.co/latest-java-tracer
         java --version
-    # - run: sbt --version
     - name: Run mvn api
       run: |
         DD_CIVISIBILITY_ENABLED=true \
