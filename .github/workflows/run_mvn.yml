@@ -37,5 +37,4 @@ jobs:
         DD_API_KEY=${{ secrets.DD_API_KEY }} \
         DD_ENV=ci \
         DD_SERVICE=my-java-app \
-        MAVEN_OPTS=-javaagent:$HOME/.datadog/dd-java-agent.jar \
         mvn clean test -Dsuite=api
